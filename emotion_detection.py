@@ -18,7 +18,7 @@ def emotion_detection(text_to_analyze):
     response = requests.post(url, headers=headers, data=json.dumps(payload))
     result = response.json()
 
-    # Extract the emotion scores
+
     emotions = result["emotionPredictions"][0]["emotion"]
 
     anger = emotions["anger"]
@@ -27,7 +27,7 @@ def emotion_detection(text_to_analyze):
     joy = emotions["joy"]
     sadness = emotions["sadness"]
 
-    # Determine dominant emotion
+
     scores = {
         "anger": anger,
         "disgust": disgust,
@@ -37,7 +37,6 @@ def emotion_detection(text_to_analyze):
     }
     dominant = max(scores, key=scores.get)
 
-    # Return the dictionary required by Coursera
     return {
         "anger": anger,
         "disgust": disgust,
