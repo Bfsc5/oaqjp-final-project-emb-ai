@@ -1,4 +1,4 @@
-from final_project import emotion_detection
+from final_project.emotion_detection import emotion_detection
 print(emotion_detection("I am glad this happened"))
 print(emotion_detection("I am really mad about this"))
 print(emotion_detection("I feel disgusted just hearing about this"))
